@@ -316,3 +316,14 @@ macro_rules! init_replayer {
     set_replayer(VolatileCellReplayer::new());
   );
 }
+
+#[macro_export]
+macro_rules! spin_until(
+  ($cond:expr) => (
+    loop {
+      if $cond {
+        break;
+      }
+    }
+  )
+);
